@@ -13,6 +13,17 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <style>
+      /* Ensure the buttons are clickable by bringing them to the front */
+      .btn {
+        position: relative;
+        z-index: 10; /* Makes sure the buttons are on top */
+      }
+
+      .swiper {
+        z-index: 1; /* Lower z-index for swiper to avoid overlap */
+      }
+    </style>
   </head>
   <body>
     <div class="container my-5 h-full">
@@ -69,10 +80,62 @@
 
         <div class="swiper-button-next"></div>
       </div>
+
+      <!-- Project Section with Buttons -->
+      <div class="mt-5">
+        <!-- Added mt-5 for margin-top -->
+
+        <img src="img/painpoint2.png" class="img-fluid" />
+
+        <img src="img/wireflow.png" class="img-fluid mb-4" />
+        <a
+          href="https://www.canva.com/design/DAGg6zJ_Xdg/ZIpGF8Ps2MY8RG8FI61VLg/edit?utm_content=DAGg6zJ_Xdg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+          class="btn custom-btn presentation-btn"
+        >
+          Presentation
+        </a>
+        <a
+          href="https://youtu.be/ssnxu00jbhw"
+          class="btn custom-btn youtube-btn"
+        >
+          Youtube
+        </a>
+        <a
+          href="https://www.figma.com/design/brtbcZZkCl2Q2mx3PjoiSp/Zodify?node-id=0-1&t=G8dPrwV6bQp2T0B3-1"
+          class="btn custom-btn figma-btn"
+        >
+          Figma
+        </a>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        loop: true, // Enable looping of slides
+        slidesPerView: 3, // Number of slides to show at once
+        spaceBetween: 20, // Space between slides
+        navigation: {
+          nextEl: ".swiper-button-next",
+        },
+        breakpoints: {
+          // Responsive settings
+          320: {
+            slidesPerView: 1, // 1 slide per view on small screens
+          },
+          768: {
+            slidesPerView: 2, // 2 slides per view on medium screens
+          },
+          1024: {
+            slidesPerView: 3, // 3 slides per view on larger screens
+          },
+        },
+      });
+    </script>
+
     <script src="script.js"></script>
   </body>
 </html>

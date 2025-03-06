@@ -1,8 +1,15 @@
 body {
-  background-color: #f8f9fa;
+  background-image: url("img/bg.png"); /* Check the path to the image */
+  background-size: cover; /* Makes sure the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Ensure the body takes the full height of the viewport */
 }
 
+/* Profile card styles */
 .profile-card {
   width: 220px;
   height: 280px;
@@ -29,13 +36,14 @@ body {
 }
 
 .profile-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
 }
 
 .profile-card:hover img {
-  transform: scale(1.15);
+  transform: scale(1.15); /* Slightly enlarge the image on hover */
 }
 
+/* Swiper styles for member profile carousel */
 .swiper {
   width: 80%;
   padding-bottom: 50px;
@@ -60,7 +68,7 @@ body {
 }
 
 .swiper-slide-active {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Enlarge the active profile card */
   z-index: 2;
 }
 
@@ -68,11 +76,81 @@ body {
   width: 270px;
   height: 320px;
   transform: scale(1.15);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Increased shadow on active profile */
 }
 
 .swiper-slide-active .profile-card img {
   width: 150px;
   height: 150px;
-  transform: scale(1.1);
+  transform: scale(1.1); /* Enlarge the image on active profile */
+}
+
+/* Custom Button Styles */
+a.custom-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue background */
+  color: white !important; /* Force white text color */
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  border: 2px solid #007bff; /* Blue border */
+  transition: all 0.3s ease; /* Smooth transition */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+  margin: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for custom buttons */
+a.custom-btn:hover {
+  background-color: #0056b3 !important; /* Darker blue */
+  color: white !important; /* Force white text on hover */
+  text-decoration: none;
+  transform: scale(1.05); /* Slight enlarge on hover */
+}
+
+/* Active (click) effect */
+a.custom-btn:active {
+  background-color: #003f73 !important; /* Even darker blue */
+  border-color: #003f73 !important; /* Match border color */
+  transform: scale(0.98); /* Slight shrink on click */
+}
+
+/* Focus effect */
+a.custom-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px 3px rgba(38, 140, 255, 0.5); /* Custom blue glow */
+}
+
+/* Custom button colors */
+a.custom-btn.presentation-btn {
+  background-color: #28a745 !important; /* Green */
+  border-color: #28a745 !important;
+}
+
+a.custom-btn.youtube-btn {
+  background-color: #ff0000 !important; /* Red */
+  border-color: #ff0000 !important;
+}
+
+a.custom-btn.figma-btn {
+  background-color: #000000 !important; /* Black */
+  border-color: #000000 !important;
+}
+
+/* Responsive Image */
+.img-fluid {
+  max-width: 100%; /* Makes image responsive */
+  height: auto; /* Maintains aspect ratio */
+}
+
+/* Adjusting text spacing and curves */
+.curved-text {
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
 }
